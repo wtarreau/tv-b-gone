@@ -63,9 +63,9 @@ The hardware for this project is very simple:
        pin 5   OC1A - IR emitters, through a '2907 PNP driver that connects 
                to 4 (or more!) PN2222A drivers, with 1000 ohm base resistor 
                and also connects to programming circuitry
-       pin 6   Region selector. Float for EU, 10K pulldown for US,
+       pin 7   Region selector. Float for EU, 10K pulldown for US,
                also connects to programming circuitry
-       pin 7   PB0 - visible LED, and also connects to programming circuitry
+       pin 6   PB0 - visible LED, and also connects to programming circuitry
        pin 8   +3-5v DC (such as 2-4 AA batteries!)
     See the schematic for more details.
 
