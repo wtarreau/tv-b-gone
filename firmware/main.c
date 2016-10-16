@@ -190,7 +190,7 @@ int main(void) {
   uint8_t i,j, Loop;
   uint8_t region = US;     // by default our code is US
   
-  Loop = 0;                // by default we are not going to loop
+  Loop = 1; // loop forever
 
   TCCR1 = 0;		   // Turn off PWM/freq gen, should be off already
   TCCR0A = 0;
@@ -300,11 +300,15 @@ int main(void) {
       bitsleft_r=0;	
 
       // delay 250 milliseconds before transmitting next POWER code
-      delay_ten_us(25000);
+      //delay_ten_us(25000);
+      delay_ten_us(22000); // 220 + 30ms (quickflashled) = 250
       
       // visible indication that a code has been output.
       quickflashLED(); 
     }
+    region = !region;
+    // Tell the user what region we're in  - 3 is US 4 is EU
+    quickflashLEDx(3+region);
   } while (Loop == 1);
   
   // We are done, no need for a watchdog timer anymore
